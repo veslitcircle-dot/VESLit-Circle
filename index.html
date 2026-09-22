@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VESLit Circle · where writers gather at midnight</title>
+<title>VESLit Circle Â· where writers gather at midnight</title>
 <meta name="description" content="The literature circle of VESIT, Mumbai. Join our Writers Hub, follow us on Instagram, register for events. Since 2015.">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%89%3C/text%3E%3C/svg%3E">
@@ -167,36 +167,12 @@
     position: relative;
     animation: hover 6s ease-in-out infinite;
     filter: drop-shadow(0 30px 60px rgba(255, 169, 77, 0.22));
-    cursor: pointer;
-    transition: filter 0.3s ease;
-  }
-  .owl-mascot:hover {
-    filter: drop-shadow(0 40px 80px rgba(255, 169, 77, 0.35));
   }
   @keyframes hover {
     0%, 100% { transform: translateY(0) rotateZ(0deg); }
     25% { transform: translateY(-8px) rotateZ(-1deg); }
     50% { transform: translateY(-12px) rotateZ(0deg); }
     75% { transform: translateY(-8px) rotateZ(1deg); }
-  }
-
-  /* Wing flap animation */
-  @keyframes wingFlap {
-    0%, 100% { transform: rotateX(0deg) rotateY(0deg); }
-    25% { transform: rotateX(15deg) rotateY(-20deg); }
-    50% { transform: rotateX(-5deg) rotateY(0deg); }
-    75% { transform: rotateX(15deg) rotateY(20deg); }
-  }
-
-  @keyframes headTilt {
-    0%, 100% { transform: rotateZ(0deg); }
-    25% { transform: rotateZ(-8deg); }
-    50% { transform: rotateZ(0deg); }
-    75% { transform: rotateZ(8deg); }
-  }
-
-  .owl-mascot.active {
-    animation: wingFlap 0.8s ease-in-out infinite;
   }
 
   .owl-mascot svg { display: block; width: 100%; height: 100%; }
@@ -440,7 +416,7 @@
   .link.form-event { --accent: rgba(255, 169, 77, 0.20); --accent-color: var(--ember); --accent-line: rgba(255, 169, 77, 0.4); }
   .link.form-writing { --accent: rgba(255, 209, 102, 0.20); --accent-color: var(--gold); --accent-line: rgba(255, 209, 102, 0.4); }
 
-  /* featured (writers hub) — larger, always-on glow */
+  /* featured (writers hub) â€” larger, always-on glow */
   .link.featured {
     padding: 22px 24px;
     border-color: rgba(78, 224, 122, 0.28);
@@ -491,90 +467,46 @@
     border-style: solid;
   }
 
-  /* ========== MODAL OVERLAY ========== */
-  .event-modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(6, 6, 26, 0.92);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-    animation: modalSlide 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-  .event-modal-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
+  /* ========== EVENTS (inline) ========== */
+  .events-section { padding-top: 20px; }
 
-  @keyframes modalSlide {
-    from {
-      opacity: 0;
-      transform: scale(0.92) translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-  }
-
-  .event-modal {
-    position: relative;
-    background: linear-gradient(180deg, rgba(27, 23, 69, 0.95) 0%, rgba(10, 10, 31, 0.95) 100%);
-    border: 1px solid var(--line-warm);
-    border-radius: 20px;
-    padding: 40px 32px;
-    max-width: 520px;
-    width: 90vw;
-    max-height: 85vh;
-    overflow-y: auto;
-    box-shadow: 0 30px 120px -30px rgba(255, 169, 77, 0.35);
-  }
-
-  .modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 28px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .modal-title {
-    font-family: 'Instrument Serif', serif;
-    font-size: 1.6rem;
-    color: var(--parchment);
-    font-style: italic;
-  }
-
-  .modal-close {
-    background: none;
-    border: none;
+  .events-intro {
+    font-size: 0.9rem;
+    line-height: 1.6;
     color: var(--parchment-quiet);
-    cursor: pointer;
-    font-size: 24px;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.3s, transform 0.3s;
-    padding: 0;
+    margin: 0 4px 18px;
   }
-  .modal-close:hover {
-    color: var(--ember);
-    transform: rotate(90deg);
+  .events-intro .collab {
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 0.04em;
   }
 
-  .event-links-grid {
+  .event-list {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
+    list-style: none;
+  }
+
+  .event-index {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: rgba(255, 169, 77, 0.10);
+    border: 1px solid var(--line-warm);
+    color: var(--ember);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+  }
+  .event-form-link:hover .event-index {
+    background: rgba(255, 169, 77, 0.22);
+    transform: rotate(-4deg) scale(1.05);
   }
 
   .event-form-link {
@@ -785,7 +717,7 @@
 <main>
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="owl-mascot" id="owlMascot" role="button" tabindex="0" aria-label="Click to view event registrations">
+    <div class="owl-mascot" aria-hidden="true">
       <svg viewBox="0 0 220 240" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="ambientGlow" cx="50%" cy="50%" r="50%">
@@ -862,13 +794,13 @@
 
     <h1 class="wordmark">VESLit<br><span class="circle-word">Circle</span></h1>
 
-    <p class="tagline">we put the lit in literature <span class="glimmer">✨</span></p>
+    <p class="tagline">we put the lit in literature <span class="glimmer">âœ¨</span></p>
 
     <p class="meta-line">
-      VESIT<span class="dot">·</span>Mumbai<span class="dot">·</span>since 2015
+      VESIT<span class="dot">Â·</span>Mumbai<span class="dot">Â·</span>since 2015
     </p>
 
-    <a class="scroll-cue" href="#links" aria-label="Scroll to links">
+    <a class="scroll-cue" href="#events" aria-label="Scroll to events">
       <span>enter the circle</span>
       <svg class="chevron" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
         <path d="M2 2 L10 10 L18 2"/>
@@ -876,7 +808,86 @@
     </a>
   </section>
 
-  <!-- ============ LINKS ============ -->
+  <!-- ============ EVENTS ============ -->
+  <section class="events-section" id="events">
+    <header class="section-header">
+      <span class="live-dot">registrations open</span>
+      <span class="section-title">vigilance week</span>
+    </header>
+
+    <p class="events-intro">
+      <span class="collab">UBI &times; VESLit</span> â€” five events, five ways in.
+      Every form opens in a new tab, so you won't lose your place here.
+    </p>
+
+    <ul class="event-list">
+      <li>
+        <a class="event-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSe8OoC07TaRiaAx56WJ0v27KGGQ26xLyRqac08y-9hOiCD5_g/viewform" target="_blank" rel="noopener noreferrer">
+          <span class="event-index" aria-hidden="true">01</span>
+          <div class="event-form-content"><div class="event-form-name">Blind Reality</div></div>
+          <svg class="event-form-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="event-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfxm78td2tv-m5LXHVA27DKZgyfKrZ0E2nkOiv_xPhwA5jhUQ/viewform" target="_blank" rel="noopener noreferrer">
+          <span class="event-index" aria-hidden="true">02</span>
+          <div class="event-form-content"><div class="event-form-name">Clock the Lie</div></div>
+          <svg class="event-form-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="event-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSc6tXJ6J7KH_eypJOmj4dQk3PN6fORmxQrUovKWN5xgSgWJpQ/viewform" target="_blank" rel="noopener noreferrer">
+          <span class="event-index" aria-hidden="true">03</span>
+          <div class="event-form-content"><div class="event-form-name">VESIT&rsquo;s Got Latent</div></div>
+          <svg class="event-form-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="event-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfbkcL0-k7mrhfBY4ZPaCjby4thKVcs4TGgM_w6--tNWmBwwg/viewform" target="_blank" rel="noopener noreferrer">
+          <span class="event-index" aria-hidden="true">04</span>
+          <div class="event-form-content"><div class="event-form-name">Jeopardy</div></div>
+          <svg class="event-form-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="event-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLScsLDKYIfcGQIwtH5YjDI2Dk70RBgnEVUz4Y_B7AJFMFrHnUg/viewform" target="_blank" rel="noopener noreferrer">
+          <span class="event-index" aria-hidden="true">05</span>
+          <div class="event-form-content"><div class="event-form-name">Tark Vitark</div></div>
+          <svg class="event-form-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about-section" id="about">
+    <h2 class="about-title">what is VESLit?</h2>
+    <div class="about-content">
+      <p>
+        <span class="about-highlight">VESLit is where the world of words meets the thrill of debate.</span>
+        We're a vibrant community of bookworms, thinkers, and discourse enthusiasts who come together to
+        dissect, deliberate, and delve into the heart of literary works.
+      </p>
+      <p>
+        We've been at VESIT, Mumbai since 2015, and we've grown into a collective that believes literature
+        isn't only about the stories on the page â€” it's about the conversations they spark, the connections
+        they forge, and the questions they push us to answer.
+      </p>
+      <p>
+        We run literary events, debate forums, writing workshops, and reading discussions. Whether you're
+        here to share a draft, argue a theme you can't let go of, or just find your people, this is your
+        space to think, write, and belong.
+      </p>
+      <p>
+        From midnight poetry to deep-dives into modern classics, from competitions that sharpen your craft
+        to collaborations that celebrate the language we share â€” this is where writers gather, readers come
+        alive, and the circle widens.
+      </p>
+      <p><strong>Read something. Write something. Tell somebody.</strong></p>
+    </div>
+  </section>
+
+  <!-- ============ SOCIALS ============ -->
   <section class="links-section" id="links">
     <header class="section-header">
       <span class="live-dot">active now</span>
@@ -899,7 +910,7 @@
               Writers Hub
               <span class="featured-badge">whatsapp</span>
             </div>
-            <div class="link-sub">The group chat where our stories cook — join to share drafts, prompts and late-night thoughts.</div>
+            <div class="link-sub">The group chat where our stories cook â€” join to share drafts, prompts and late-night thoughts.</div>
           </div>
           <span class="link-cue" aria-hidden="true">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
@@ -923,7 +934,7 @@
           </span>
           <div class="link-body">
             <div class="link-title">Instagram</div>
-            <div class="link-sub">@veslit_circle — event drops, results, behind the scenes</div>
+            <div class="link-sub">@veslit_circle â€” event drops, results, behind the scenes</div>
           </div>
           <span class="link-cue" aria-hidden="true">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
@@ -947,7 +958,7 @@
           </span>
           <div class="link-body">
             <div class="link-title">Insta Spam</div>
-            <div class="link-sub">@lit_sspamm — the messier, chaotic-good side of us</div>
+            <div class="link-sub">@lit_sspamm â€” the messier, chaotic-good side of us</div>
           </div>
           <span class="link-cue" aria-hidden="true">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
@@ -969,7 +980,7 @@
           </span>
           <div class="link-body">
             <div class="link-title">LinkedIn</div>
-            <div class="link-sub">The professional face — for alumni, recruiters, collabs</div>
+            <div class="link-sub">The professional face â€” for alumni, recruiters, collabs</div>
           </div>
           <span class="link-cue" aria-hidden="true">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
@@ -979,61 +990,14 @@
         </a>
       </li>
 
-      <!-- ============ EVENTS SECTION ============
-           Intentionally blank — event forms drop here when they go live.
-           See README.md > "Adding an event" for the copy-paste snippet.
-      -->
-      <li class="list-divider">events &amp; submissions</li>
-
-      <li class="empty-state">
-        <div class="empty-title">the pages are still blank</div>
-        <div class="empty-sub">
-          new events drop first on <a href="https://www.instagram.com/veslit_circle/" target="_blank" rel="noopener">@veslit_circle</a>
-        </div>
-      </li>
     </ul>
   </section>
 
-  <!-- ============ ABOUT SECTION ============ -->
-  <section class="about-section">
-    <h2 class="about-title">about VESLit</h2>
-    <div class="about-content">
-      <p>
-        <span class="about-highlight">VESLIT is where the world of words meets the thrill of debate.</span> We're a vibrant community of bookworms, thinkers, and discourse enthusiasts who come together to dissect, deliberate, and delve into the heart of literary works.
-      </p>
-      <p>
-        Born in 2015 at VESIT, Mumbai, we've grown into a collective of passionate readers and writers who believe that literature isn't just about the stories on the page — it's about the conversations they spark, the connections they forge, and the questions they challenge us to answer.
-      </p>
-      <p>
-        We host literary events, debate forums, writing workshops, and curated reading discussions. Whether you're here to share your latest draft, engage in spirited debates about the themes that move you, or simply find your people, VESLit Circle is your space to think, write, and belong.
-      </p>
-      <p>
-        From midnight poetry sessions to analytical deep-dives into modern classics, from competitions that push your craft to collaborative projects that celebrate our shared love of language — this is where writers gather, readers come alive, and the circle of literature grows ever wider.
-      </p>
-      <p>
-        <strong>Join us.</strong> Read something. Write something. Tell somebody.
-      </p>
-    </div>
-  </section>
-
   <footer>
-    <div>by the VESLit council <span class="heart">♡</span> <span id="year"></span></div>
+    <div>by the VESLit council <span class="heart">â™¡</span> <span id="year"></span></div>
     <span class="sub">read something. write something. tell somebody.</span>
   </footer>
 </main>
-
-<!-- ============ EVENT MODAL ============ -->
-<div class="event-modal-overlay" id="eventModalOverlay">
-  <div class="event-modal">
-    <div class="modal-header">
-      <h2 class="modal-title">Vigilance Week Events</h2>
-      <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
-    </div>
-    <div class="event-links-grid" id="eventLinksGrid">
-      <!-- Event links will be populated by JavaScript -->
-    </div>
-  </div>
-</div>
 
 <script>
   // --- generate a soft starfield ---
@@ -1075,98 +1039,9 @@
   // --- gentle scroll for the "enter the circle" cue ---
   document.querySelector('.scroll-cue')?.addEventListener('click', function (e) {
     e.preventDefault();
-    document.getElementById('links')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('events')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
-  // ===== EVENT MODAL FUNCTIONALITY =====
-  const owlMascot = document.getElementById('owlMascot');
-  const eventModalOverlay = document.getElementById('eventModalOverlay');
-  const closeModalBtn = document.getElementById('closeModal');
-  const eventLinksGrid = document.getElementById('eventLinksGrid');
-
-  // Event data for Vigilance Week
-  const vigilanceEvents = [
-    {
-      name: 'Literary Analysis Workshop',
-      formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSe8OoC07TaRiaAx56WJ0v27KGGQ26xLyRqac08y-9hOiCD5_g/viewform'
-    },
-    {
-      name: 'Creative Writing Contest',
-      formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfxm78td2tv-m5LXHVA27DKZgyfKrZ0E2nkOiv_xPhwA5jhUQ/viewform'
-    },
-    {
-      name: 'Poetry Recitation Night',
-      formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc6tXJ6J7KH_eypJOmj4dQk3PN6fORmxQrUovKWN5xgSgWJpQ/viewform'
-    },
-    {
-      name: 'Book Club Discussion',
-      formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfbkcL0-k7mrhfBY4ZPaCjby4thKVcs4TGgM_w6--tNWmBwwg/viewform'
-    },
-    {
-      name: 'Author Meetup & Q&A',
-      formLink: 'https://docs.google.com/forms/d/e/1FAIpQLScsLDKYIfcGQIwtH5YjDI2Dk70RBgnEVUz4Y_B7AJFMFrHnUg/viewform'
-    }
-  ];
-
-  // Populate event links in the modal
-  function populateEventLinks() {
-    eventLinksGrid.innerHTML = vigilanceEvents.map(event => `
-      <a class="event-form-link" href="${event.formLink}" target="_blank" rel="noopener noreferrer">
-        <span class="event-form-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"/>
-            <path d="M12 6v6l4 2"/>
-          </svg>
-        </span>
-        <div class="event-form-content">
-          <div class="event-form-name">${event.name}</div>
-        </div>
-        <svg class="event-form-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
-    `).join('');
-  }
-
-  // Open modal when owl is clicked
-  function openEventModal() {
-    owlMascot.classList.add('active');
-    eventModalOverlay.classList.add('active');
-    populateEventLinks();
-    document.body.style.overflow = 'hidden';
-  }
-
-  // Close modal
-  function closeEventModal() {
-    owlMascot.classList.remove('active');
-    eventModalOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  // Event listeners for modal
-  owlMascot.addEventListener('click', openEventModal);
-  owlMascot.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      openEventModal();
-    }
-  });
-
-  closeModalBtn.addEventListener('click', closeEventModal);
-
-  // Close modal when clicking outside
-  eventModalOverlay.addEventListener('click', function (e) {
-    if (e.target === eventModalOverlay) {
-      closeEventModal();
-    }
-  });
-
-  // Close modal with Escape key
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && eventModalOverlay.classList.contains('active')) {
-      closeEventModal();
-    }
-  });
 </script>
 
 </body>
