@@ -602,13 +602,15 @@
 
   /* ---------- about section ---------- */
   .about-section {
-    margin: 80px 0;
-    padding: 40px 24px;
-    background: linear-gradient(180deg, rgba(36, 30, 88, 0.35) 0%, rgba(10, 10, 31, 0.25) 100%);
-    border: 1px solid var(--line-warm);
-    border-radius: 16px;
-  }
-
+  margin: 80px 0;
+  padding: 40px 24px;
+  background: linear-gradient(180deg, rgba(36, 30, 88, 0.92) 0%, rgba(10, 10, 31, 0.92) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--line-warm);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.5);
+}
   .about-title {
     font-family: 'Instrument Serif', serif;
     font-style: italic;
