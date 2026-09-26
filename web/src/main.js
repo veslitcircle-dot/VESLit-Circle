@@ -1,3 +1,6 @@
+import { inject } from "@vercel/analytics";
+inject();                                                    // Vercel Web Analytics (page views; no cookies)
+
 // VESLit Circle site: scrub a pre-rendered camera path on scroll, pin HTML to the frame, play lights-on first.
 
 const HOLD = 12, MOVE = 48;                                   // must match assets/blender/build_room.py
