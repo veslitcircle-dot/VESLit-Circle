@@ -1,120 +1,33 @@
-# VESLit Circle · Website 🦉
+# VESLit Circle 🦉
 
-The linktree-style landing page for [@veslit_circle](https://www.instagram.com/veslit_circle/) — the literature circle of VESIT, Mumbai.
+The website of [@veslit_circle](https://www.instagram.com/veslit_circle/), the literature circle of VESIT, Mumbai.
 
-One page, one file, zero backend. Deploys free on GitHub Pages in about 5 minutes.
+The site is a pre-rendered 3D room. Scrolling walks the camera between six stops: the wide room, the
+crest, the notice board (latest Instagram post and the events with their registration forms), the owl at
+the window, the trophy cabinet, and the library. The room is a sequence of rendered frames scrubbed on
+scroll; the text, the notice board and the owl are live layers on top, so week-to-week content is a one-file
+edit and the owl is a real 3D model that flies in, lands and idles.
 
----
-
-## What's in this repo
+## Layout
 
 ```
-veslit-circle/
-├── index.html      ← the entire site (HTML + CSS + JS, all in one file)
-├── README.md       ← you are here
-├── LICENSE         ← MIT (do what you want, keep the credit line)
-└── .gitignore      ← keeps random OS files out of git
+web/                 the site (Vite). Deployed by Vercel from vercel.json
+  public/content.json   everything the committee edits: post, events, wins, about, socials
+  public/content/       the latest Instagram post image
+  public/frames/        rendered room frames (WebP), board and camera data per frame
+  public/models/owl/    the owl glTF (Sketchfab, CC BY-NC)
+  src/main.js           scroll -> frame, pinned cards, notice-board projection, effects
+  src/owl3d.js          the live three.js owl
+assets/
+  logo/              the crest traced from the logo PNG (trace_logo.py -> veslit-logo.svg)
+  blender/           scripts that build the crest and the room and render the frames
+  tools/             frame conversion and Poly Haven fetch
+  models/            Sketchfab downloads (not in git; see assets/models/README.md)
 ```
 
-That's it. No build step, no dependencies, no npm. Open `index.html` in a browser and it just works.
-
----
-
-## Deploy to GitHub Pages (5 min)
-
-1. **Create a new GitHub repo** — call it whatever, e.g. `veslit-circle`.
-2. **Upload all these files** into it (drag & drop on github.com works, or use `git`).
-3. Go to the repo's **Settings → Pages**.
-4. Under **Source**, pick **Deploy from a branch**.
-5. Pick branch **`main`** and folder **`/ (root)`**. Save.
-6. Wait 1–2 minutes. GitHub gives you a URL like:
-   `https://<your-username>.github.io/veslit-circle/`
-
-That's your live site. Drop it in the Instagram bio.
-
-**Want a real domain like `veslit.com`?** Buy one, then in Settings → Pages → **Custom domain**, paste it in. GitHub will guide you through the DNS setup.
-
----
-
-## Editing the site
-
-Everything lives in **`index.html`**. Open it in any text editor (VS Code is free and easy). All the CSS is in one `<style>` block at the top; all the content is in `<main>` further down.
-
-### Changing a social link
-
-Find the `<a class="link …">` block for the one you want and edit the `href="…"`. Example:
-
-```html
-<a class="link insta" href="https://www.instagram.com/veslit_circle/" ...>
-```
-
-Replace the URL. Done.
-
-### Changing the tagline or "since 2015"
-
-Search `index.html` for the words `we put the lit in literature` or `since 2015` and edit them in place.
-
-### Adding an event (when you have a Google Form)
-
-Right now the events section shows an empty state ("the pages are still blank"). To add a real event:
-
-1. Find the comment `<!-- ============ EVENTS SECTION ============ -->` in `index.html`.
-2. **Delete** the `<li class="empty-state">…</li>` block below the divider.
-3. **Paste** this snippet in its place, editing the two things marked `EDIT`:
-
-```html
-<li>
-  <a class="link form-event"
-     href="https://forms.gle/EDIT-YOUR-FORM-URL-HERE"
-     target="_blank" rel="noopener">
-    <span class="link-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M8 3v4M16 3v4M3 9h18M5 6h14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/>
-        <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
-      </svg>
-    </span>
-    <div class="link-body">
-      <div class="link-title">EDIT — Event name here</div>
-      <div class="link-sub">Short one-liner — date, or "Google Form, 30 seconds"</div>
-    </div>
-    <span class="link-cue" aria-hidden="true">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 10 L10 4 M10 4 L4 4 M10 4 L10 10"/></svg>
-    </span>
-  </a>
-</li>
-```
-
-You can paste as many of these as you have events. For a **writing-submission** form, change `class="link form-event"` to `class="link form-writing"` — it uses a warmer gold accent instead of ember.
-
-Once the event's over, delete the block and (if nothing's next) paste the empty-state block back in.
-
-### Changing colors
-
-At the very top of the `<style>` block, all colors live as CSS variables. Change one line, the whole site updates:
-
-```css
---ember: #FFA94D;   /* main warm accent */
---gold:  #FFD166;   /* owl-eye highlight */
---lilac: #C4B5FD;   /* soft cool accent */
---rose:  #FF7CA3;   /* the "live" dot & spam-account accent */
-```
-
----
-
-## Tech notes
-
-- Pure HTML/CSS/JS, no framework
-- Fonts loaded from Google Fonts: **Instrument Serif**, **Space Grotesk**, **Caveat**
-- SVG owl mascot is drawn inline — swap the `<svg>` inside `.owl-mascot` if you have a logo
-- The starfield is generated by a small script at the bottom of the page (~15 lines)
-- Respects `prefers-reduced-motion` for accessibility
-- Works down to ~320px wide (phones)
-
----
+Updating content: see [web/README.md](web/README.md). Rebuilding the room: same file, bottom section.
 
 ## Credits
 
-Built for VESLit Circle · VESIT Chembur · Mumbai.  
-Design vibe: *3AM library* — deep midnight, warm ember accents, wise owl.
-
-MIT licensed — see `LICENSE`. Do what you want with it.
+3D assets by their authors under CC BY / CC BY-NC / CC0, listed in `web/public/content.json` and shown
+on the site. Site code MIT.

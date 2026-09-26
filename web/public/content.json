@@ -1,0 +1,52 @@
+{
+  "_readme": "Edit this file to update the site. Images go in web/public/content/. Push to redeploy.",
+
+  "instagram": {
+    "image": "/content/latest-post.jpg",
+    "caption": "Vigilance Week is here. Five events, five ways in.",
+    "url": "https://www.instagram.com/veslit_circle/",
+    "posted": "September 2026",
+    "relatedEvent": "clock-the-lie"
+  },
+
+  "eventsTitle": "Vigilance Week",
+  "eventsSubtitle": "",
+  "events": [
+    { "id": "blind-reality", "name": "Blind Reality", "date": "[DATE]", "venue": "[VENUE]", "status": "open",
+      "form": "https://docs.google.com/forms/d/e/1FAIpQLSe8OoC07TaRiaAx56WJ0v27KGGQ26xLyRqac08y-9hOiCD5_g/viewform" },
+    { "id": "clock-the-lie", "name": "Clock the Lie", "date": "[DATE]", "venue": "[VENUE]", "status": "open",
+      "form": "https://docs.google.com/forms/d/e/1FAIpQLSfxm78td2tv-m5LXHVA27DKZgyfKrZ0E2nkOiv_xPhwA5jhUQ/viewform" },
+    { "id": "got-latent", "name": "VESIT's Got Latent", "date": "[DATE]", "venue": "[VENUE]", "status": "open",
+      "form": "https://docs.google.com/forms/d/e/1FAIpQLSc6tXJ6J7KH_eypJOmj4dQk3PN6fORmxQrUovKWN5xgSgWJpQ/viewform" },
+    { "id": "jeopardy", "name": "Jeopardy", "date": "[DATE]", "venue": "[VENUE]", "status": "open",
+      "form": "https://docs.google.com/forms/d/e/1FAIpQLSfbkcL0-k7mrhfBY4ZPaCjby4thKVcs4TGgM_w6--tNWmBwwg/viewform" },
+    { "id": "tark-vitark", "name": "Tark Vitark", "date": "[DATE]", "venue": "[VENUE]", "status": "open",
+      "form": "https://docs.google.com/forms/d/e/1FAIpQLScsLDKYIfcGQIwtH5YjDI2Dk70RBgnEVUz4Y_B7AJFMFrHnUg/viewform" }
+  ],
+
+  "wins": {
+    "counts": { "wins": 24, "colleges": 15, "years": 10 },
+    "list": []
+  },
+
+  "about": {
+    "title": "What is VESLit?",
+    "lead": "VESLit is where the world of words meets the thrill of debate.",
+    "body": "A community of bookworms, thinkers, and discourse enthusiasts at VESIT, Mumbai since 2015. We run literary events, debate forums, writing workshops, and reading discussions. Whether you're here to share a draft, argue a theme you can't let go of, or just find your people, this is your space.",
+    "closing": "Read something. Write something. Tell somebody.",
+    "shelf": ["Debates", "Midnight poetry", "Writing workshops", "Reading circles", "Intercollegiate", "Collabs"]
+  },
+
+  "socials": [
+    { "id": "writers-hub", "label": "Writers Hub", "sub": "WhatsApp community · where our stories cook", "url": "https://chat.whatsapp.com/HvSSwNBeKah1VVQ1vNK9Yf" },
+    { "id": "instagram", "label": "@veslit_circle", "sub": "Instagram", "url": "https://www.instagram.com/veslit_circle/" },
+    { "id": "spam", "label": "@lit_sspamm", "sub": "Insta spam · the chaotic-good side", "url": "https://www.instagram.com/lit_sspamm/" },
+    { "id": "linkedin", "label": "VESLit on LinkedIn", "sub": "Alumni, recruiters, collabs", "url": "https://www.linkedin.com/company/veslit/posts/" }
+  ],
+
+  "credits": [
+    "Owl: WildPoly3D (CC BY-NC)", "Trophies: rianshima, JuanG3D, Mad_Lobster_Workshop, Incg5764 (CC BY)",
+    "Display case: StephanTTM (CC BY)", "Bookshelf: FractalSpace (CC BY)", "Wall light: R-LAB (CC BY)",
+    "Window: Nait (CC BY)", "Textures and props: Poly Haven (CC0)"
+  ]
+}

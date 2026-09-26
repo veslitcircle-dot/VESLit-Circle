@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>VESLit Circle</title>
+  <meta name="description" content="The literature circle of VESIT, Mumbai. Walk the room: our crest, this week's events, the trophy cabinet, and the library. Since 2015.">
+  <meta name="theme-color" content="#0a0806">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%89%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+
+  <!-- preloader: the room is dark, then the lights come on -->
+  <div id="preloader" aria-hidden="true">
+    <div class="pre-copy">
+      <span class="pre-mark">VESLit Circle</span>
+      <span class="pre-sub" id="preStatus">lighting the room…</span>
+    </div>
+  </div>
+
+  <!-- the room: a fixed canvas that scrubs the rendered camera path, with HTML pinned to it -->
+  <div id="stage">
+    <canvas id="room"></canvas>
+    <div id="pinned" class="pinned">
+
+      <section class="card card-hero" data-stop="wide" data-anchor="0.03,0.64,0.30,0.32" data-anchor-m="0.06,0.80,0.88,0.18">
+        <p class="eyebrow">The literature circle of VESIT · since 2015</p>
+        <h1 class="wordmark shiny">VESLit<br><em>Circle</em></h1>
+        <p class="tagline"><span class="typed" data-text="we put the lit in literature"></span><span class="caret">|</span></p>
+        <p class="cue">scroll to walk the room</p>
+      </section>
+
+      <section class="card card-crest" data-stop="crest" data-anchor="0.25,0.90,0.50,0.09" data-anchor-m="0.08,0.90,0.84,0.09">
+        <p class="crest-line">Where words meet the thrill of debate.</p>
+        <p class="crest-sub">Debates · midnight poetry · workshops · reading circles</p>
+      </section>
+
+      <section class="card card-board" data-stop="board" data-anchor="0.135,0.30,0.73,0.345" data-anchor-m="0.06,0.30,0.88,0.56">
+        <div class="board-grid">
+          <a class="insta" id="insta" href="#" target="_blank" rel="noopener">
+            <img id="instaImg" alt="Latest post from @veslit_circle">
+            <div class="insta-text">
+              <span class="eyebrow">Latest from @veslit_circle</span>
+              <span class="insta-caption" id="instaCaption"></span>
+              <span class="insta-meta" id="instaMeta"></span>
+            </div>
+          </a>
+          <div class="events">
+            <div class="events-head">
+              <span class="eyebrow" id="eventsSub"></span>
+              <h2 id="eventsTitle"></h2>
+              <span class="live" id="eventsLive">Registrations open</span>
+            </div>
+            <ul class="event-list" id="eventList"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card card-window glass" data-stop="window" data-anchor="0.03,0.12,0.30,0.70" data-anchor-m="0.06,0.075,0.88,0.34">
+        <p class="eyebrow">Join the circle</p>
+        <h2 class="h-serif">The circle<br><em>widens.</em></h2>
+        <ul class="socials" id="socials"></ul>
+      </section>
+
+      <section class="card card-cabinet glass" data-stop="cabinet" data-anchor="0.60,0.10,0.37,0.80" data-anchor-m="0.06,0.085,0.88,0.34">
+        <p class="eyebrow">The trophy cabinet</p>
+        <h2 class="h-serif">We go out.<br>We come back<br><em>with W&rsquo;s.</em></h2>
+        <div class="counts" id="counts"></div>
+        <ul class="wins" id="wins"></ul>
+      </section>
+
+      <section class="card card-library glass" data-stop="library" data-anchor="0.03,0.12,0.40,0.76" data-anchor-m="0.06,0.36,0.88,0.60">
+        <p class="eyebrow">The library</p>
+        <h2 class="h-serif" id="aboutTitle"></h2>
+        <p class="lead" id="aboutLead"></p>
+        <p class="body" id="aboutBody"></p>
+        <p class="closing" id="aboutClosing"></p>
+        <ul class="shelf-tags" id="shelfTags"></ul>
+        <p class="credits" id="credits"></p>
+      </section>
+
+    </div>
+
+    <nav class="nav" id="nav">
+      <a class="nav-mark" href="#wide">VESLit Circle</a>
+      <div class="nav-links">
+        <a href="#board">Events</a>
+        <a href="#window">Join</a>
+        <a href="#cabinet">Wins</a>
+        <a href="#library">About</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- film grain: a faint animated noise over everything, which reads as texture and sharpness -->
+  <div id="grain" aria-hidden="true"></div>
+
+  <!-- scroll track: one block per camera segment; heights set from src/main.js -->
+  <div id="track" aria-hidden="true"></div>
+
+  <!-- registration drawer: the Google Form opens here, over the room -->
+  <div id="drawer" class="drawer" hidden>
+    <div class="drawer-panel">
+      <div class="drawer-head">
+        <span class="eyebrow">Register</span>
+        <strong id="drawerTitle"></strong>
+        <button class="drawer-close" id="drawerClose" aria-label="Close">×</button>
+      </div>
+      <iframe id="drawerFrame" title="Registration form" loading="lazy"></iframe>
+      <a id="drawerOpen" class="drawer-ext" href="#" target="_blank" rel="noopener">Open the form in a new tab ↗</a>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
