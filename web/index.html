@@ -27,11 +27,11 @@
     <canvas id="room"></canvas>
     <div id="pinned" class="pinned">
 
-      <section class="card card-hero" data-stop="wide" data-anchor="0.03,0.64,0.30,0.32" data-anchor-m="0.06,0.80,0.88,0.18">
+      <section class="card card-hero" data-stop="wide" data-anchor="0.03,0.64,0.30,0.32" data-anchor-m="0.06,0.74,0.88,0.18">
         <p class="eyebrow">The literature circle of VESIT · since 2015</p>
         <h1 class="wordmark shiny">VESLit<br><em>Circle</em></h1>
         <p class="tagline"><span class="typed" data-text="we put the lit in literature"></span><span class="caret">|</span></p>
-        <p class="cue">scroll to walk the room</p>
+        <p class="cue">scroll or use the arrow keys</p>
       </section>
 
       <section class="card card-crest" data-stop="crest" data-anchor="0.25,0.90,0.50,0.09" data-anchor-m="0.08,0.90,0.84,0.09">
@@ -84,6 +84,20 @@
       </section>
 
     </div>
+
+    <!-- navigation help: a scroll cue at the bottom until the visitor moves, and a stop rail on the right -->
+    <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+      <span class="scroll-cue-text cue-desktop">Scroll to walk the room</span><span class="scroll-cue-arrow cue-desktop"></span>
+      <span class="scroll-cue-text cue-touch">Swipe up to walk the room</span><span class="scroll-cue-swipe cue-touch"></span>
+    </div>
+    <ol class="rail" id="rail" aria-label="Sections">
+      <li><a href="#wide" data-stop="wide"><span>Welcome</span></a></li>
+      <li><a href="#crest" data-stop="crest"><span>Crest</span></a></li>
+      <li><a href="#board" data-stop="board"><span>Events</span></a></li>
+      <li><a href="#window" data-stop="window"><span>Join</span></a></li>
+      <li><a href="#cabinet" data-stop="cabinet"><span>Wins</span></a></li>
+      <li><a href="#library" data-stop="library"><span>About</span></a></li>
+    </ol>
 
     <nav class="nav" id="nav">
       <a class="nav-mark" href="#wide">VESLit Circle</a>

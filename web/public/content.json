@@ -12,15 +12,15 @@
   "eventsTitle": "Vigilance Week",
   "eventsSubtitle": "",
   "events": [
-    { "id": "blind-reality", "name": "Blind Reality", "date": "[DATE]", "venue": "[VENUE]", "status": "open",
+    { "id": "blind-reality", "name": "Blind Reality", "date": "", "venue": "", "status": "open",
       "form": "https://docs.google.com/forms/d/e/1FAIpQLSe8OoC07TaRiaAx56WJ0v27KGGQ26xLyRqac08y-9hOiCD5_g/viewform" },
-    { "id": "clock-the-lie", "name": "Clock the Lie", "date": "[DATE]", "venue": "[VENUE]", "status": "open",
+    { "id": "clock-the-lie", "name": "Clock the Lie", "date": "", "venue": "", "status": "open",
       "form": "https://docs.google.com/forms/d/e/1FAIpQLSfxm78td2tv-m5LXHVA27DKZgyfKrZ0E2nkOiv_xPhwA5jhUQ/viewform" },
-    { "id": "got-latent", "name": "VESIT's Got Latent", "date": "[DATE]", "venue": "[VENUE]", "status": "open",
+    { "id": "got-latent", "name": "VESIT's Got Latent", "date": "", "venue": "", "status": "open",
       "form": "https://docs.google.com/forms/d/e/1FAIpQLSc6tXJ6J7KH_eypJOmj4dQk3PN6fORmxQrUovKWN5xgSgWJpQ/viewform" },
-    { "id": "jeopardy", "name": "Jeopardy", "date": "[DATE]", "venue": "[VENUE]", "status": "open",
+    { "id": "jeopardy", "name": "Jeopardy", "date": "", "venue": "", "status": "open",
       "form": "https://docs.google.com/forms/d/e/1FAIpQLSfbkcL0-k7mrhfBY4ZPaCjby4thKVcs4TGgM_w6--tNWmBwwg/viewform" },
-    { "id": "tark-vitark", "name": "Tark Vitark", "date": "[DATE]", "venue": "[VENUE]", "status": "open",
+    { "id": "tark-vitark", "name": "Tark Vitark", "date": "", "venue": "", "status": "open",
       "form": "https://docs.google.com/forms/d/e/1FAIpQLScsLDKYIfcGQIwtH5YjDI2Dk70RBgnEVUz4Y_B7AJFMFrHnUg/viewform" }
   ],
 

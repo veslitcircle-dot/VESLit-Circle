@@ -11,7 +11,7 @@ Edit **`public/content.json`** and push. Vercel redeploys in about a minute.
 | what | where in `content.json` | notes |
 |---|---|---|
 | Latest Instagram post | `instagram` | replace `public/content/latest-post.jpg` (any aspect, about 1600 px wide), set `caption`, `url`, `posted` |
-| Events | `events[]` | `name`, `date`, `venue`, `form` (Google Form link), `status`: `open`, `soon` (closing soon) or `closed` |
+| Events | `events[]` | `name`, `date`, `venue` (leave either `""` to hide it), `form` (Google Form link), `status`: `open`, `soon` (closing soon) or `closed` |
 | Event section title | `eventsTitle`, `eventsSubtitle` | e.g. "Vigilance Week"; leave the subtitle `""` to hide that line |
 | Wins | `wins.counts`, `wins.list[]` | counts are numbers (they count up on screen); list rows are `event`, `fest`, `year`, `placing`, or `[]` to hide the list |
 | About text | `about` | `lead`, `body`, `closing`, `shelf` (tags) |

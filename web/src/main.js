@@ -225,7 +225,7 @@ function scrollForStop(k) {
 }
 
 // card visibility: fully on during the hold, fading across the last third of the approach and first third of the leave
-const navLinks = [...document.querySelectorAll(".nav a[href^='#']")];
+const navLinks = [...document.querySelectorAll(".nav a[href^='#'], .rail a[href^='#']")];
 let activeStop = -1;
 function updateCards(f) {
   for (const c of cards) {
@@ -264,7 +264,12 @@ function tick() {
   updateCards(current); projectBoard(current); updateOwl(current, performance.now());
   requestAnimationFrame(tick);
 }
-function onScroll() { target = frameForScroll(window.scrollY); lastScrollAt = performance.now(); }
+const scrollCue = document.getElementById("scrollCue");
+function onScroll() {
+  target = frameForScroll(window.scrollY); lastScrollAt = performance.now();
+  // the scroll cue shows on the first and last stops and while the visitor is idle, and hides as soon as they move
+  scrollCue.classList.toggle("hide", target > STOP_FRAME[0] + HOLD && target < LAST_FRAME - 1);
+}
 
 async function ensureSet(name) {
   if (sets[name] && sets[name].frames.length) return sets[name];
@@ -314,7 +319,7 @@ async function fillContent() {
     <li class="event ${e.status}">
       <span class="n">${String(i + 1).padStart(2, "0")}</span>
       <span class="name">${e.name}</span>
-      <span class="meta">${e.date} · ${e.venue}</span>
+      ${[e.date, e.venue].filter(Boolean).length ? `<span class="meta">${[e.date, e.venue].filter(Boolean).join(" · ")}</span>` : ""}
       <button data-form="${e.form}" data-name="${e.name}" ${e.status === "closed" ? "disabled" : ""}>${e.status === "closed" ? "Closed" : "Register"}</button>
     </li>`).join("");
   $("socials").innerHTML = c.socials.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener"><strong>${s.label}</strong><span>${s.sub}</span></a></li>`).join("");
@@ -371,7 +376,7 @@ new MutationObserver(() => {
 }).observe(document.getElementById("pinned"), { attributes: true, subtree: true, attributeFilter: ["class"] });
 
 // nav: jump to a stop
-document.querySelectorAll(".nav a[href^='#']").forEach(a => a.addEventListener("click", e => {
+document.querySelectorAll(".nav a[href^='#'], .rail a[href^='#']").forEach(a => a.addEventListener("click", e => {
   e.preventDefault();
   const k = STOPS.indexOf(a.getAttribute("href").slice(1));
   if (k >= 0) window.scrollTo({ top: scrollForStop(k), behavior: "smooth" });
